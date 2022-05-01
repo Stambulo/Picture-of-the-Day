@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var avatar: UIImageView!
+    
+    @IBAction func getImage(_ sender: Any) {
+        // https://picsum.photos/200
+        
+        let url = URL(string: "https://picsum.photos/200")
+        let data = try? Data(contentsOf: url!)
+        let image = UIImage(data: data!)
+        avatar.image = image
     }
-
-
 }
-
